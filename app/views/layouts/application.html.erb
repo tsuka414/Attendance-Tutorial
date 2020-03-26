@@ -7,9 +7,23 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 
                                'data-turbolinks-track': 'reload' %>
+    <!-- HTML shimがこの１行で収まる -->
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
+    <header class="navbar nabvar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Attendance App", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Top", '#' %></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
